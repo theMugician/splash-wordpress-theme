@@ -1,0 +1,82 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid;
+	border-color: $color__border-button;
+	background: $color__background-button;
+	color: #000;
+	line-height: 1;
+	font-size: 1.6rem;
+	padding: 1rem 1.6rem;
+  min-width: 24.0rem;
+  -ms-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+  &--small {
+    font-size: 1.2rem;
+    padding: 1rem 1.6rem;
+    min-width: 102rem;
+  }
+  &--large {
+    padding: 1.6rem 2.4rem;
+    min-width: 29.2rem;
+  }
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
+
+.vigor-buttons {
+	.vigor-button {
+	  -ms-transform: skewX(-10deg);
+	  -webkit-transform: skewX(-10deg);
+	  transform: skewX(-10deg);
+	  border: 2px solid;
+	  line-height: 1;
+	  display: inline-block;
+	  display: inline-block;
+		text-decoration: none;
+		font-weight: bold;
+		text-align: center;
+		margin-right: 2.4rem;
+  	text-transform: uppercase;
+	  span {
+	  	-ms-transform: skewX(10deg);
+		  -webkit-transform: skewX(10deg);
+		  transform: skewX(10deg);
+		  display: inline-block;
+		  line-height: 1;
+	  }
+	  &--solid {
+			border-color: $color__primary;
+			background: $color__primary;
+			color: #000;
+		}
+		&--outline {
+			border-color: $color__primary;
+			background: transparent;
+			color: $color__primary;
+		}
+		 &--small {
+	    font-size: 1.2rem;
+	    padding: 1rem 1.6rem;
+	    min-width: 10.2rem;
+	  }
+		 &--medium {
+			font-size: 1.6rem;
+			padding: 1rem 1.6rem;
+		  min-width: 24.0rem;
+	  }
+	  &--large {
+	  	font-size: 1.6rem;
+	    padding: 2.2rem 2.4rem;
+	    min-width: 29.2rem;
+	  }
+	}
+}

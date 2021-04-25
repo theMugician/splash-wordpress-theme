@@ -1,0 +1,122 @@
+// media aliases and breakpoints
+// lt : less than
+// gt : greater than
+
+$screen__sm-min: 576px;
+$screen__md-min: 768px;
+$screen__lg-min: 992px;
+$screen__xl-min: 1200px;
+$screen__xxl-min: 1400px;
+
+$screen__xs-max: 575.9px;
+$screen__sm-max: 767.9px;
+$screen__md-max: 991.9px;
+$screen__lg-max: 1919.9px;
+$screen__xl-max: 1399.9px;
+$screen__xxl-max: 6000px;
+
+// xs    0 -  575.9
+// sm  576 -  767.9
+// md  768 -  991.9 
+// lg  992 - 1199.9
+// xl 1200 - 1399.9
+// xxl 1400 - 6000.0
+
+// media devices
+@mixin screen__xs {
+  @media (max-width: #{$screen__xs-max}) {
+    @content;
+  }
+}
+
+@mixin screen__sm {
+  @media (min-width: #{$screen__sm-min}) and (max-width: #{$screen__sm-max}) {
+    @content;
+  }
+}
+
+@mixin screen__md {
+  @media (min-width: #{$screen__md-min}) and (max-width: #{$screen__md-max}) {
+    @content;
+  }
+}
+
+@mixin screen__lg {
+  @media (min-width: #{$screen__lg-min}) and (max-width: #{$screen__lg-max}) {
+    @content;
+  }
+}
+
+@mixin screen__xl {
+  @media (min-width: #{$screen__xl-min}) and (max-width: #{$screen__xl-max}) {
+    @content;
+  }
+}
+
+@mixin screen__xxl {
+  @media (min-width: #{$screen__xxl-min}) and (max-width: #{$screen__xxl-max}) {
+    @content;
+  }
+}
+
+// media lt queries
+@mixin screen__lt-sm {
+  @media (max-width: #{$screen__xs-max}) {
+    @content;
+  }
+}
+
+@mixin screen__lt-md {
+  @media (max-width: #{$screen__sm-max}) {
+    @content;
+  }
+}
+
+@mixin screen__lt-lg {
+  @media (max-width: #{$screen__md-max}) {
+    @content;
+  }
+}
+
+@mixin screen__lt-xl {
+  @media (max-width: #{$screen__lg-max}) {
+    @content;
+  }
+}
+
+@mixin screen__lt-xxl {
+  @media (max-width: #{$screen__xl-max}) {
+    @content;
+  }
+}
+
+// media gt queries
+@mixin screen__gt-xs {
+  @media (min-width: #{$screen__sm-min}) {
+    @content;
+  }
+}
+
+@mixin screen__gt-sm {
+  @media (min-width: #{$screen__md-min}) {
+    @content;
+  }
+}
+
+@mixin screen__gt-md {
+  @media (min-width: #{$screen__lg-min}) {
+    @content;
+  }
+}
+
+@mixin screen__gt-lg {
+  @media (min-width: #{$screen__xl-min}) {
+    @content;
+  }
+}
+
+@mixin screen__gt-xl {
+  @media (min-width: #{$screen__xxl-min}) {
+    @content;
+  }
+}

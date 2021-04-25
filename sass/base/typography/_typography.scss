@@ -1,0 +1,34 @@
+html {
+	font-size: $font__size-reset;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	font-size: 2rem;
+	line-height: $font__line-height-body;
+}
+
+.font-style {
+	&--medium {
+		font-weight: 500;
+	}
+	&--semi-bold {
+		font-weight: 600;
+	}
+	&--bold {
+		font-weight: 700;
+	}
+	&--bold-italic {
+		font-weight: 700;
+		font-style: italic;
+	}	
+}
+
+@import "headings";
+@import "copy";

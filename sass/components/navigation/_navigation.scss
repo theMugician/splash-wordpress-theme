@@ -1,0 +1,255 @@
+.nav {
+	&__main-menu {
+		list-style: none;
+		display: flex;
+		margin-left: 0;
+    padding-left: 0;
+		// @include screen__lt-md {
+		// 	display: none;
+		// }
+		.current-menu-item {
+			&:after {
+				width: 100% !important;
+			}
+		}
+		.menu-item {
+			position: relative;
+			border-bottom: 0;
+			margin-left: 2rem;
+			//transition: all 0.25s;
+			//border-bottom: 2px solid white;
+			&:after {
+				content: '';
+			  display: block;
+			  position: absolute;
+			  top: 0; right: 0; bottom: 0; left: 0;
+			  border-bottom: solid 0.2rem #fff;
+			  width: 0;
+			  transition: all 0.25s linear;
+
+			}
+			&:hover::after {
+				width: 100%;
+			}
+			a {
+				font-weight: 600;
+				align-self: center;
+				padding: 1rem;
+				color: #fff;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 1.6rem;
+			}
+			.button {
+				color: #fff;
+				padding: 1.2rem 2rem;
+			}
+		}
+	}
+
+	&__burger {
+		width: 3.3rem;
+		height: auto;
+		display: none;
+		// @include screen__lt-md {
+		// 	display: block;
+		// }
+		span {
+			display: block;
+		  width: 3.3rem;
+		  height: 0.4rem;
+		  margin-bottom: 0.5rem;
+		  position: relative;
+		  background: #fff;
+		  border-radius: 0.2rem;
+		  z-index: 1;
+		  transform-origin: 4px 0px; 			
+		}
+	}	
+	&__drop-down {
+		display: none;
+	}
+	&__mobile-menu {
+    flex-direction: column;
+    .modal__container {
+    	height: 100%;
+			width: 100%;
+    }
+    .menu-item {
+    	margin-left: 0;
+    	a {
+    		padding: 2rem 0;
+    		display: block;
+    	}
+    }
+	}
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+.has-dropdown {
+	position: relative;
+}
+
+.dropdown {
+	z-index: 1;
+  background: #fff;
+  visibility: hidden;
+	border: 0.1rem solid #fff;
+	opacity: 0;
+  min-width: 16rem;
+  position: absolute;
+  transition: all 0.2s ease;
+  left: 0;
+	.nav__item {
+		margin-left: 0;
+		a {
+			// @include screen__lt-md {
+			// 	padding-left: 2rem;
+			// }
+			display: block;
+		}
+	}
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+.nav__mobile-menu {
+	&.active {
+		display: flex;
+		height: 100%;
+	}
+}
+
+#modal-nav-mobile-menu {
+	.modal__container {
+		height: 100%;
+		max-width: 100%;
+	}
+}
+/*
+.main-navigation {
+	display: block;
+	width: 100%;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					left: auto;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+/*
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+*/
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		text-align: end;
+		flex: 1 0 50%;
+	}
+}

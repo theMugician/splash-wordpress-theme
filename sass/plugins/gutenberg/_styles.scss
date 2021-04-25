@@ -1,0 +1,47 @@
+.has-black-background-color {
+  background-color: #000;
+}
+
+.has-black-color {
+  color: #000;
+}
+
+.has-black-background-color.wp-block-button__link {
+	border: 2px solid #000;
+}
+
+.has-yellow-background-color {
+  background-color: #ffd100;
+}
+
+.has-yellow-background-color.wp-block-button__link {
+	border: 2px solid #ffd100;
+}
+
+.has-yellow-color {
+  color: #ffd100;
+}
+
+
+.has-white-background-color {
+  background-color: #fff;
+}
+
+.has-white-color {
+  color: #fff;
+}
+
+.has-white-background-color.wp-block-button__link {
+	border: 2px solid #fff;
+}
+
+.alignwide,
+.alignfull {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.alignwide {
+	max-width: 1228px;
+}
+

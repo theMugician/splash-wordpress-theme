@@ -1,0 +1,21 @@
+.header {
+	&:after {
+		display: none;
+	}
+	&:before {
+		display: none;
+	}
+	&__container {
+		justify-content: space-between;
+		height: 10rem;
+		display: flex;
+		align-items: center;
+		max-width: 1228px;
+		margin: 0 auto;
+	}
+	&--sticky {
+		position: fixed;
+		z-index: 9999999;
+		width: 100%;
+	}
+}

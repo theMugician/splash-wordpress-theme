@@ -1,0 +1,22 @@
+$spacing-steps : 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200;
+
+@each $spacing-step in $spacing-steps {
+  .padding--#{$spacing-step} {
+    padding: $spacing-step + px;
+  }
+  .padding__top--#{$spacing-step} {
+		padding-top: $spacing-step + px;
+  }
+  .padding__bottom--#{$spacing-step} {
+		padding-bottom: $spacing-step + px;
+  }
+  .margin--#{$spacing-step} {
+    margin: $spacing-step + px;
+  }
+  .margin__top--#{$spacing-step} {
+		margin-top: $spacing-step + px;
+  }
+  .margin__bottom--#{$spacing-step} {
+		margin-bottom: $spacing-step + px;
+  }
+}

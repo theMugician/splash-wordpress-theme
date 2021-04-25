@@ -1,0 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: bold;
+	font-style: italic;
+	font-weight: bold;
+	color: $color__black;
+	line-height: 1;
+}
+
+h1 {
+	&.title {
+		margin-top: 0;
+		font-size: 11.2rem;
+		line-height: 1;
+	}
+}
+
+$heading-sizes: (
+	h1 : 7rem,
+	h2 : 6rem,
+	h3 : 5rem,
+	h4 : 4rem,
+	h5 : 3rem,
+	h6 : 2rem
+);
+
+@each $heading,$size in $heading-sizes {
+	  #{$heading} {
+	    font-size: $size;
+	}
+}

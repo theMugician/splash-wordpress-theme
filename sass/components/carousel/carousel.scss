@@ -1,0 +1,96 @@
+.carousel {
+	width: 100%;
+	position: relative;
+	.carousel__header {
+    width: 100%;
+    margin: auto;
+    color: #fff;
+    position: absolute;
+    top: 4rem;
+    z-index: 1;
+    text-align: center;
+    &>*{
+	    margin: 0 auto 2rem;
+	    max-width: 64rem;    
+	  }
+    .carousel__title {
+    	color: #fff;
+    }
+    .carousel__subheading {
+    	font-size: 2rem;
+    	color: #fff;
+    	font-weight: 500;
+    }
+  }
+  &__link {
+  	width: 100%;
+		margin: 0 auto;
+  	position: absolute;
+  	bottom: 5rem;
+  	@include screen__gt-xl {
+  		bottom: 7rem;
+  	}
+  	text-align: center;
+  }
+  .coach {
+  	&__info {
+  		width: 100%;
+			margin: 0 auto;
+			position: absolute;
+			bottom: 8rem;
+			@include screen__gt-xl {
+	  		bottom: 12rem;
+	  	}
+			text-align: center;
+			&>*{
+		    margin: 2rem auto;
+		    max-width: 60rem;    
+		  }
+  	}
+  	&__name {
+  		font-weight: bold;
+  		color: #fff;
+  	}
+  	&__details {
+			color: #fff;
+		}
+  }
+	
+	.carousel-indicators {
+		margin-bottom: 0;
+		li {
+			margin: 0;
+			margin-right: 1.8rem;
+			border: 0;
+	    width: 8px;
+	    height: 8px;
+	    background-color: rgba(255,255,255,0.3);
+	    &:last-child{
+	    	margin-right: 0;
+	    }
+		}
+		.active {
+			margin: 0;
+			margin-right: 1.8rem;
+	    width: 8px;
+	    height: 8px;
+	    background-color: rgba(255,255,255,1.0);
+	  }
+	}
+	.carousel-inner {
+
+	// 	height: 500px;
+	// 	.item img{
+	// 		min-height: 400px;
+	// 		//prevent it from stretch in screen size < than 768px
+	// 		object-fit:cover
+	// 	}
+	}
+}
+
+@media(max-width:768px){
+	// .carousel .carousel-inner {
+	// //prevent it from adding a white space between carousel and container elements
+	// height:auto
+	// }
+}

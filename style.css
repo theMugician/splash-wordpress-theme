@@ -1,0 +1,3651 @@
+/*!
+Theme Name: Splash
+Theme URI: http://underscores.me/
+Author: Greg Slonina
+Author URI: https://sevenoceans.agency
+Description: Starter theme developed by Seven Oceans Agency
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: vigor
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Vigor is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- FLexbox
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: url("fonts/IBMPlexSans-Bold.woff") format("woff"), url("fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: italic;
+	font-weight: 700;
+	src: url("fonts/IBMPlexSans-BoldItalic.woff") format("woff"), url("fonts/IBMPlexSans-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url("fonts/IBMPlexSans-SemiBold.woff") format("woff"), url("fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 500;
+	src: url("fonts/IBMPlexSans-Medium.woff") format("woff"), url("fonts/IBMPlexSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url("fonts/IBMPlexSans-Regular.woff") format("woff"), url("fonts/IBMPlexSans-Regular.woff2") format("woff2");
+}
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+/* Normalize
+--------------------------------------------- */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+	 ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/* Typography
+--------------------------------------------- */
+html {
+	font-size: 62.5%;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #000;
+	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.font-style--medium {
+	font-weight: 500;
+}
+
+.font-style--semi-bold {
+	font-weight: 600;
+}
+
+.font-style--bold {
+	font-weight: 700;
+}
+
+.font-style--bold-italic {
+	font-weight: 700;
+	font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: bold;
+	font-style: italic;
+	font-weight: bold;
+	color: #000;
+	line-height: 1;
+}
+
+h1.title {
+	margin-top: 0;
+	font-size: 11.2rem;
+	line-height: 1;
+}
+
+h1 {
+	font-size: 7rem;
+}
+
+h2 {
+	font-size: 6rem;
+}
+
+h3 {
+	font-size: 5rem;
+}
+
+h4 {
+	font-size: 4rem;
+}
+
+h5 {
+	font-size: 3rem;
+}
+
+h6 {
+	font-size: 2rem;
+}
+
+p {
+	margin-bottom: 2rem;
+}
+
+p.small {
+	font-size: 1.6rem;
+}
+
+p.extra-small {
+	font-size: 1.2rem;
+}
+
+p.large {
+	font-size: 2.6rem;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	background: #fff;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	text-decoration: none;
+	color: #ffd100;
+	font-weight: bold;
+}
+
+a:visited {
+	color: #ffd100;
+}
+
+a:hover, a:focus, a:active {
+	color: #ffd100;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid;
+	border-color: #ffd100 #ffd100 #ffd100;
+	background: #ffd100;
+	color: #000;
+	line-height: 1;
+	font-size: 1.6rem;
+	padding: 1rem 1.6rem;
+	min-width: 24.0rem;
+	-ms-transform: skewX(-10deg);
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+}
+
+button--small,
+input[type="button"]--small,
+input[type="reset"]--small,
+input[type="submit"]--small {
+	font-size: 1.2rem;
+	padding: 1rem 1.6rem;
+	min-width: 102rem;
+}
+
+button--large,
+input[type="button"]--large,
+input[type="reset"]--large,
+input[type="submit"]--large {
+	padding: 1.6rem 2.4rem;
+	min-width: 29.2rem;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ffd100 #ffd100 #ffd100;
+}
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #ffd100 #ffd100 #ffd100;
+}
+
+.vigor-buttons .vigor-button {
+	-ms-transform: skewX(-10deg);
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+	border: 2px solid;
+	line-height: 1;
+	display: inline-block;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	margin-right: 2.4rem;
+	text-transform: uppercase;
+}
+
+.vigor-buttons .vigor-button span {
+	-ms-transform: skewX(10deg);
+	-webkit-transform: skewX(10deg);
+	transform: skewX(10deg);
+	display: inline-block;
+	line-height: 1;
+}
+
+.vigor-buttons .vigor-button--solid {
+	border-color: #ffd100;
+	background: #ffd100;
+	color: #000;
+}
+
+.vigor-buttons .vigor-button--outline {
+	border-color: #ffd100;
+	background: transparent;
+	color: #ffd100;
+}
+
+.vigor-buttons .vigor-button--small {
+	font-size: 1.2rem;
+	padding: 1rem 1.6rem;
+	min-width: 10.2rem;
+}
+
+.vigor-buttons .vigor-button--medium {
+	font-size: 1.6rem;
+	padding: 1rem 1.6rem;
+	min-width: 24.0rem;
+}
+
+.vigor-buttons .vigor-button--large {
+	font-size: 1.6rem;
+	padding: 2.2rem 2.4rem;
+	min-width: 29.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #000;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+.header:after {
+	display: none;
+}
+
+.header:before {
+	display: none;
+}
+
+.header__container {
+	justify-content: space-between;
+	height: 10rem;
+	display: flex;
+	align-items: center;
+	max-width: 1228px;
+	margin: 0 auto;
+}
+
+.header--sticky {
+	position: fixed;
+	z-index: 9999999;
+	width: 100%;
+}
+
+.no-page-title .entry-content {
+	margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/* Navigation
+--------------------------------------------- */
+.nav__main-menu {
+	list-style: none;
+	display: flex;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.nav__main-menu .current-menu-item:after {
+	width: 100% !important;
+}
+
+.nav__main-menu .menu-item {
+	position: relative;
+	border-bottom: 0;
+	margin-left: 2rem;
+}
+
+.nav__main-menu .menu-item:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-bottom: solid 0.2rem #fff;
+	width: 0;
+	transition: all 0.25s linear;
+}
+
+.nav__main-menu .menu-item:hover::after {
+	width: 100%;
+}
+
+.nav__main-menu .menu-item a {
+	font-weight: 600;
+	align-self: center;
+	padding: 1rem;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.6rem;
+}
+
+.nav__main-menu .menu-item .button {
+	color: #fff;
+	padding: 1.2rem 2rem;
+}
+
+.nav__burger {
+	width: 3.3rem;
+	height: auto;
+	display: none;
+}
+
+.nav__burger span {
+	display: block;
+	width: 3.3rem;
+	height: 0.4rem;
+	margin-bottom: 0.5rem;
+	position: relative;
+	background: #fff;
+	border-radius: 0.2rem;
+	z-index: 1;
+	transform-origin: 4px 0px;
+}
+
+.nav__drop-down {
+	display: none;
+}
+
+.nav__mobile-menu {
+	flex-direction: column;
+}
+
+.nav__mobile-menu .modal__container {
+	height: 100%;
+	width: 100%;
+}
+
+.nav__mobile-menu .menu-item {
+	margin-left: 0;
+}
+
+.nav__mobile-menu .menu-item a {
+	padding: 2rem 0;
+	display: block;
+}
+
+li:focus-within a {
+	outline: none;
+}
+
+.has-dropdown {
+	position: relative;
+}
+
+.dropdown {
+	z-index: 1;
+	background: #fff;
+	visibility: hidden;
+	border: 0.1rem solid #fff;
+	opacity: 0;
+	min-width: 16rem;
+	position: absolute;
+	transition: all 0.2s ease;
+	left: 0;
+}
+
+.dropdown .nav__item {
+	margin-left: 0;
+}
+
+.dropdown .nav__item a {
+	display: block;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+
+ul li ul li {
+	clear: both;
+	width: 100%;
+}
+
+.nav__mobile-menu.active {
+	display: flex;
+	height: 100%;
+}
+
+#modal-nav-mobile-menu .modal__container {
+	height: 100%;
+	max-width: 100%;
+}
+
+/*
+.main-navigation {
+	display: block;
+	width: 100%;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					left: auto;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+/*
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+*/
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/* Hero
+--------------------------------------------- */
+.hero {
+	min-height: 80rem;
+	height: 100%;
+}
+
+/* Carousel
+--------------------------------------------- */
+.carousel {
+	width: 100%;
+	position: relative;
+}
+
+.carousel .carousel__header {
+	width: 100%;
+	margin: auto;
+	color: #fff;
+	position: absolute;
+	top: 4rem;
+	z-index: 1;
+	text-align: center;
+}
+
+.carousel .carousel__header > * {
+	margin: 0 auto 2rem;
+	max-width: 64rem;
+}
+
+.carousel .carousel__header .carousel__title {
+	color: #fff;
+}
+
+.carousel .carousel__header .carousel__subheading {
+	font-size: 2rem;
+	color: #fff;
+	font-weight: 500;
+}
+
+.carousel__link {
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 5rem;
+	text-align: center;
+}
+
+@media (min-width: 1400px) {
+	.carousel__link {
+		bottom: 7rem;
+	}
+}
+
+.carousel .coach__info {
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 8rem;
+	text-align: center;
+}
+
+@media (min-width: 1400px) {
+	.carousel .coach__info {
+		bottom: 12rem;
+	}
+}
+
+.carousel .coach__info > * {
+	margin: 2rem auto;
+	max-width: 60rem;
+}
+
+.carousel .coach__name {
+	font-weight: bold;
+	color: #fff;
+}
+
+.carousel .coach__details {
+	color: #fff;
+}
+
+.carousel .carousel-indicators {
+	margin-bottom: 0;
+}
+
+.carousel .carousel-indicators li {
+	margin: 0;
+	margin-right: 1.8rem;
+	border: 0;
+	width: 8px;
+	height: 8px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.carousel .carousel-indicators li:last-child {
+	margin-right: 0;
+}
+
+.carousel .carousel-indicators .active {
+	margin: 0;
+	margin-right: 1.8rem;
+	width: 8px;
+	height: 8px;
+	background-color: white;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/* Gutenberg
+--------------------------------------------- */
+.has-black-background-color {
+	background-color: #000;
+}
+
+.has-black-color {
+	color: #000;
+}
+
+.has-black-background-color.wp-block-button__link {
+	border: 2px solid #000;
+}
+
+.has-yellow-background-color {
+	background-color: #ffd100;
+}
+
+.has-yellow-background-color.wp-block-button__link {
+	border: 2px solid #ffd100;
+}
+
+.has-yellow-color {
+	color: #ffd100;
+}
+
+.has-white-background-color {
+	background-color: #fff;
+}
+
+.has-white-color {
+	color: #fff;
+}
+
+.has-white-background-color.wp-block-button__link {
+	border: 2px solid #fff;
+}
+
+.alignwide,
+.alignfull {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.alignwide {
+	max-width: 1228px;
+}
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+/* Flexbox
+--------------------------------------------- */
+.flex {
+	display: flex;
+}
+
+.flex__align-center {
+	margin: auto;
+	align-self: center;
+}
+
+.flex__align-left {
+	margin-right: auto;
+	align-self: center;
+}
+
+.flex__align-right {
+	margin-left: auto;
+	align-self: center;
+}
+
+.flex__align-x-center {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.flex__align-x-left {
+	margin-right: auto;
+}
+
+.flex__align-x-right {
+	margin-left: auto;
+}
+
+.flex__align-y-center {
+	align-self: center;
+}
+
+.flex__align-y-top {
+	align-self: flex-start;
+}
+
+.flex__align-y-bottom {
+	align-self: flex-end;
+}
+
+/*  FLEX ITEM
+    Summary:    a shorthand property specifying the ability of a flex item to alter
+                its dimensions to fill available space. Summarizes {flex-grow, flex-shrink, flex-basis }
+    Reference:  https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+    Default:    0 1 0;
+*/
+.flexed-item {
+	flex: 1 1 0;
+}
+
+.flexed-item--auto {
+	flex: 1 1 auto;
+}
+
+/*  DIRECTION ( ORIENTATION )  -------------------------------------------------
+    Summary:    specifies how flex items are placed in the flex container defining
+                the main axis and the direction (normal or reversed).
+    Options:
+        Column: set main axis to vertical
+        Row :   set main axis to horizontal
+    Reference:  https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+    Default:    flex-direction: row;
+*/
+.flex__column {
+	flex-direction: column;
+}
+
+.flex__row {
+	flex-direction: row;
+}
+
+/*  JUSTIFICATION (Main axis)   ------------------------------------------------
+    Summary:    defines how the browser distributes space between and around flex
+    items along the main-axis of their container.
+    Reference:  https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+    Default:    justify-content: flex-start;
+*/
+/* Pack items around the center */
+.flex__content-center {
+	justify-content: center;
+}
+
+/* Pack flex items from the start  */
+.flex__content-start {
+	justify-content: flex-start;
+}
+
+/* Pack items from the end */
+.flex__content-end {
+	justify-content: flex-end;
+}
+
+/* Distribute items evenly,
+    The first item at the start, the last at the end */
+.flex__content-between {
+	justify-content: space-between;
+}
+
+/* Distribute items evenly
+    Items have equal space around them */
+.flex__content-around {
+	justify-content: space-around;
+}
+
+/*
+    ALIGN CONTENT ( Cross axis )  ----------------------------------------------
+    Summary:   aligns a flex container's lines within the flex container when
+               there is extra space on the cross-axis.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+    Default:   align-content: flex-start;
+*/
+/* Pack lines from the cross-axis start */
+.flex__align-content-start {
+	align-content: flex-start;
+}
+
+/* Pack lines to the cross-axis end */
+.flex__align-content-end {
+	align-content: flex-end;
+}
+
+/* Pack lines around the cross-axis center */
+.flex__align-content-center {
+	align-content: center;
+}
+
+/* Distribute lines along the cross-axis, start to end */
+.flex__align-content-between {
+	align-content: space-between;
+}
+
+/* Distribute lines along the cross-axis, equally spaced */
+.flex__align-content-around {
+	align-content: space-around;
+}
+
+/* Stretch lines to occupy the whole cross-axis */
+.flex__align-content-stretch {
+	align-content: stretch;
+}
+
+/*
+    ALIGN ITEMS ( Cross axis )  ------------------------------------------------
+    Summary:   aligns flex items of the current flex line the same way as
+               justify-content but in the perpendicular direction.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+    Default:   align-items: stretch;
+*/
+/* Center items in the cross-axis */
+.flex__align-items-center {
+	align-items: center;
+}
+
+/* Align to cross-start */
+.flex__align-items-start {
+	align-items: flex-start;
+}
+
+/* Align to cross-end */
+.flex__align-items-end {
+	align-items: flex-end;
+}
+
+/* Align the items' baselines */
+.flex__align-items-baseline {
+	align-items: baseline;
+}
+
+/* Stretch the items to fit
+    DEFAULT VALUE  */
+.flex__align-items-stretch {
+	align-items: stretch;
+}
+
+/*
+    ALIGN SELF ( Cross axis )  ------------------------------------------------
+    Summary:   aligns flex items of the current flex line overriding the align-items value.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/align-self
+    Default:   align-self: auto;
+*/
+/*  Computes to parent's align-items value or stretch if the element has no parent.  */
+.flex__align-self-auto {
+	align-self: auto;
+}
+
+/*  Cross-start margin edge of the flex item is flushed with the cross-start edge of the line.  */
+.flex__align-self-start {
+	align-self: flex-start;
+}
+
+/*  Cross-end margin edge of the flex item is flushed with the cross-end edge of the line.  */
+.flex__align-self-end {
+	align-self: flex-end;
+}
+
+/* Flex item's margin box is centered within the line on the cross-axis.
+    If the cross-size of the item is larger than the flex container, it will
+    overflow equally in both directions.  */
+.flex__align-self-center {
+	align-self: center;
+}
+
+/*  All flex items are aligned such that their baselines align. The item with
+    the largest distance between its cross-start margin edge and its baseline is
+    flushed with the cross-start edge of the line.  */
+.flex__align-self-baseline {
+	align-self: baseline;
+}
+
+/*  Flex items are stretched such as the cross-size of the item's margin box is
+    the same as the line while respecting width and height constraints.  */
+.flex__align-self-stretch {
+	align-self: stretch;
+}
+
+/*
+    WRAPPING -------------------------------------------------------------------
+    Summary:   specifies whether flex items are forced into a single line or can
+               be wrapped onto multiple lines. If wrapping is allowed, this property
+               also enables you to control the direction in which lines are stacked.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+    Default:   flex-wrap: nowrap;
+*/
+.flex__no-wrap {
+	flex-wrap: nowrap;
+}
+
+.flex__reverse-wrap {
+	flex-wrap: wrap-reverse;
+}
+
+.flex__wrap {
+	flex-wrap: wrap;
+}
+
+/*
+    VISUAL ORDER ---------------------------------------------------------------
+    Summary:   specifies the order used to lay out flex items in their flex container.
+               Elements are laid out in the ascending order of the order value.
+               Elements with the same order value are laid out in the order in
+               which they appear in the source code.
+    Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/order
+    Default:   order: 0; { no order }
+*/
+.flex__order-one {
+	-webkit-order: 1;
+	order: 1;
+}
+
+.flex__order-two {
+	-webkit-order: 2;
+	order: 2;
+}
+
+.flex__order-three {
+	-webkit-order: 3;
+	order: 3;
+}
+
+/* Flexbox
+--------------------------------------------- */
+.grid, [class*="grid-auto-"] {
+	display: grid;
+	grid-gap: var(--grid-gap, 0);
+}
+
+.grid {
+	--grid-cols: 12;
+	grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid > * {
+	grid-column-end: span var(--grid-cols);
+}
+
+.grid-auto-xs, .grid-auto-sm, .grid-auto-md, .grid-auto-lg, .grid-auto-xl {
+	grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
+}
+
+.grid-auto-xs {
+	--col-min-width: 8rem;
+}
+
+.grid-auto-sm {
+	--col-min-width: 10rem;
+}
+
+.grid-auto-md {
+	--col-min-width: 15rem;
+}
+
+.grid-auto-lg {
+	--col-min-width: 20rem;
+}
+
+.grid-auto-xl {
+	--col-min-width: 25rem;
+}
+
+.grid-auto-cols {
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.grid-gap-xxxxs {
+	--grid-gap: var(--space-xxxxs, $grid-gap);
+}
+
+.grid-gap-xxxs {
+	--grid-gap: var(--space-xxxs, $grid-gap);
+}
+
+.grid-gap-xxs {
+	--grid-gap: var(--space-xxs, $grid-gap);
+}
+
+.grid-gap-xs {
+	--grid-gap: var(--space-xs, $grid-gap);
+}
+
+.grid-gap-sm {
+	--grid-gap: var(--space-sm, $grid-gap);
+}
+
+.grid-gap-md {
+	--grid-gap: var(--space-md, $grid-gap);
+}
+
+.grid-gap-lg {
+	--grid-gap: var(--space-lg, $grid-gap);
+}
+
+.grid-gap-xl {
+	--grid-gap: var(--space-xl, $grid-gap);
+}
+
+.grid-gap-xxl {
+	--grid-gap: var(--space-xxl, $grid-gap);
+}
+
+.grid-gap-xxxl {
+	--grid-gap: var(--space-xxxl, $grid-gap);
+}
+
+.grid-gap-xxxxl {
+	--grid-gap: var(--space-xxxxl, 1$grid-gap);
+}
+
+.grid-gap-xxxxl {
+	--grid-gap: var(--space-xxxxl, 1$grid-gap);
+}
+
+.col-1 {
+	grid-column-end: span 1;
+}
+
+.col-start-1 {
+	grid-column-start: 1;
+}
+
+.col-end-2 {
+	grid-column-end: 2;
+}
+
+.col-2 {
+	grid-column-end: span 2;
+}
+
+.col-start-2 {
+	grid-column-start: 2;
+}
+
+.col-end-3 {
+	grid-column-end: 3;
+}
+
+.col-3 {
+	grid-column-end: span 3;
+}
+
+.col-start-3 {
+	grid-column-start: 3;
+}
+
+.col-end-4 {
+	grid-column-end: 4;
+}
+
+.col-4 {
+	grid-column-end: span 4;
+}
+
+.col-start-4 {
+	grid-column-start: 4;
+}
+
+.col-end-5 {
+	grid-column-end: 5;
+}
+
+.col-5 {
+	grid-column-end: span 5;
+}
+
+.col-start-5 {
+	grid-column-start: 5;
+}
+
+.col-end-6 {
+	grid-column-end: 6;
+}
+
+.col-6 {
+	grid-column-end: span 6;
+}
+
+.col-start-6 {
+	grid-column-start: 6;
+}
+
+.col-end-7 {
+	grid-column-end: 7;
+}
+
+.col-7 {
+	grid-column-end: span 7;
+}
+
+.col-start-7 {
+	grid-column-start: 7;
+}
+
+.col-end-8 {
+	grid-column-end: 8;
+}
+
+.col-8 {
+	grid-column-end: span 8;
+}
+
+.col-start-8 {
+	grid-column-start: 8;
+}
+
+.col-end-9 {
+	grid-column-end: 9;
+}
+
+.col-9 {
+	grid-column-end: span 9;
+}
+
+.col-start-9 {
+	grid-column-start: 9;
+}
+
+.col-end-10 {
+	grid-column-end: 10;
+}
+
+.col-10 {
+	grid-column-end: span 10;
+}
+
+.col-start-10 {
+	grid-column-start: 10;
+}
+
+.col-end-11 {
+	grid-column-end: 11;
+}
+
+.col-11 {
+	grid-column-end: span 11;
+}
+
+.col-start-11 {
+	grid-column-start: 11;
+}
+
+.col-end-12 {
+	grid-column-end: 12;
+}
+
+.col-12 {
+	grid-column-end: span 12;
+}
+
+.col-start-12 {
+	grid-column-start: 12;
+}
+
+.col-end-13 {
+	grid-column-end: 13;
+}
+
+.col-start {
+	grid-column-start: 1;
+}
+
+.col-end {
+	grid-column-end: -1;
+}
+
+@media (min-width: 32rem) {
+	.grid-auto-xs\@xs {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@xs {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@xs {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@xs {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@xs {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@xs {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@xs {
+		grid-column-end: span 1;
+	}
+	.col-start-1\@xs {
+		grid-column-start: 1;
+	}
+	.col-end-2\@xs {
+		grid-column-end: 2;
+	}
+	.col-2\@xs {
+		grid-column-end: span 2;
+	}
+	.col-start-2\@xs {
+		grid-column-start: 2;
+	}
+	.col-end-3\@xs {
+		grid-column-end: 3;
+	}
+	.col-3\@xs {
+		grid-column-end: span 3;
+	}
+	.col-start-3\@xs {
+		grid-column-start: 3;
+	}
+	.col-end-4\@xs {
+		grid-column-end: 4;
+	}
+	.col-4\@xs {
+		grid-column-end: span 4;
+	}
+	.col-start-4\@xs {
+		grid-column-start: 4;
+	}
+	.col-end-5\@xs {
+		grid-column-end: 5;
+	}
+	.col-5\@xs {
+		grid-column-end: span 5;
+	}
+	.col-start-5\@xs {
+		grid-column-start: 5;
+	}
+	.col-end-6\@xs {
+		grid-column-end: 6;
+	}
+	.col-6\@xs {
+		grid-column-end: span 6;
+	}
+	.col-start-6\@xs {
+		grid-column-start: 6;
+	}
+	.col-end-7\@xs {
+		grid-column-end: 7;
+	}
+	.col-7\@xs {
+		grid-column-end: span 7;
+	}
+	.col-start-7\@xs {
+		grid-column-start: 7;
+	}
+	.col-end-8\@xs {
+		grid-column-end: 8;
+	}
+	.col-8\@xs {
+		grid-column-end: span 8;
+	}
+	.col-start-8\@xs {
+		grid-column-start: 8;
+	}
+	.col-end-9\@xs {
+		grid-column-end: 9;
+	}
+	.col-9\@xs {
+		grid-column-end: span 9;
+	}
+	.col-start-9\@xs {
+		grid-column-start: 9;
+	}
+	.col-end-10\@xs {
+		grid-column-end: 10;
+	}
+	.col-10\@xs {
+		grid-column-end: span 10;
+	}
+	.col-start-10\@xs {
+		grid-column-start: 10;
+	}
+	.col-end-11\@xs {
+		grid-column-end: 11;
+	}
+	.col-11\@xs {
+		grid-column-end: span 11;
+	}
+	.col-start-11\@xs {
+		grid-column-start: 11;
+	}
+	.col-end-12\@xs {
+		grid-column-end: 12;
+	}
+	.col-12\@xs {
+		grid-column-end: span 12;
+	}
+	.col-start-12\@xs {
+		grid-column-start: 12;
+	}
+	.col-end-13\@xs {
+		grid-column-end: 13;
+	}
+	.col-start-auto\@xs {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@xs {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 48rem) {
+	.grid-auto-xs\@sm {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@sm {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@sm {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@sm {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@sm {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@sm {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@sm {
+		grid-column-end: span 1;
+	}
+	.col-start-1\@sm {
+		grid-column-start: 1;
+	}
+	.col-end-2\@sm {
+		grid-column-end: 2;
+	}
+	.col-2\@sm {
+		grid-column-end: span 2;
+	}
+	.col-start-2\@sm {
+		grid-column-start: 2;
+	}
+	.col-end-3\@sm {
+		grid-column-end: 3;
+	}
+	.col-3\@sm {
+		grid-column-end: span 3;
+	}
+	.col-start-3\@sm {
+		grid-column-start: 3;
+	}
+	.col-end-4\@sm {
+		grid-column-end: 4;
+	}
+	.col-4\@sm {
+		grid-column-end: span 4;
+	}
+	.col-start-4\@sm {
+		grid-column-start: 4;
+	}
+	.col-end-5\@sm {
+		grid-column-end: 5;
+	}
+	.col-5\@sm {
+		grid-column-end: span 5;
+	}
+	.col-start-5\@sm {
+		grid-column-start: 5;
+	}
+	.col-end-6\@sm {
+		grid-column-end: 6;
+	}
+	.col-6\@sm {
+		grid-column-end: span 6;
+	}
+	.col-start-6\@sm {
+		grid-column-start: 6;
+	}
+	.col-end-7\@sm {
+		grid-column-end: 7;
+	}
+	.col-7\@sm {
+		grid-column-end: span 7;
+	}
+	.col-start-7\@sm {
+		grid-column-start: 7;
+	}
+	.col-end-8\@sm {
+		grid-column-end: 8;
+	}
+	.col-8\@sm {
+		grid-column-end: span 8;
+	}
+	.col-start-8\@sm {
+		grid-column-start: 8;
+	}
+	.col-end-9\@sm {
+		grid-column-end: 9;
+	}
+	.col-9\@sm {
+		grid-column-end: span 9;
+	}
+	.col-start-9\@sm {
+		grid-column-start: 9;
+	}
+	.col-end-10\@sm {
+		grid-column-end: 10;
+	}
+	.col-10\@sm {
+		grid-column-end: span 10;
+	}
+	.col-start-10\@sm {
+		grid-column-start: 10;
+	}
+	.col-end-11\@sm {
+		grid-column-end: 11;
+	}
+	.col-11\@sm {
+		grid-column-end: span 11;
+	}
+	.col-start-11\@sm {
+		grid-column-start: 11;
+	}
+	.col-end-12\@sm {
+		grid-column-end: 12;
+	}
+	.col-12\@sm {
+		grid-column-end: span 12;
+	}
+	.col-start-12\@sm {
+		grid-column-start: 12;
+	}
+	.col-end-13\@sm {
+		grid-column-end: 13;
+	}
+	.col-start-auto\@sm {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@sm {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 64rem) {
+	.grid-auto-xs\@md {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@md {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@md {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@md {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@md {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@md {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@md {
+		grid-column-end: span 1;
+	}
+	.col-start-1\@md {
+		grid-column-start: 1;
+	}
+	.col-end-2\@md {
+		grid-column-end: 2;
+	}
+	.col-2\@md {
+		grid-column-end: span 2;
+	}
+	.col-start-2\@md {
+		grid-column-start: 2;
+	}
+	.col-end-3\@md {
+		grid-column-end: 3;
+	}
+	.col-3\@md {
+		grid-column-end: span 3;
+	}
+	.col-start-3\@md {
+		grid-column-start: 3;
+	}
+	.col-end-4\@md {
+		grid-column-end: 4;
+	}
+	.col-4\@md {
+		grid-column-end: span 4;
+	}
+	.col-start-4\@md {
+		grid-column-start: 4;
+	}
+	.col-end-5\@md {
+		grid-column-end: 5;
+	}
+	.col-5\@md {
+		grid-column-end: span 5;
+	}
+	.col-start-5\@md {
+		grid-column-start: 5;
+	}
+	.col-end-6\@md {
+		grid-column-end: 6;
+	}
+	.col-6\@md {
+		grid-column-end: span 6;
+	}
+	.col-start-6\@md {
+		grid-column-start: 6;
+	}
+	.col-end-7\@md {
+		grid-column-end: 7;
+	}
+	.col-7\@md {
+		grid-column-end: span 7;
+	}
+	.col-start-7\@md {
+		grid-column-start: 7;
+	}
+	.col-end-8\@md {
+		grid-column-end: 8;
+	}
+	.col-8\@md {
+		grid-column-end: span 8;
+	}
+	.col-start-8\@md {
+		grid-column-start: 8;
+	}
+	.col-end-9\@md {
+		grid-column-end: 9;
+	}
+	.col-9\@md {
+		grid-column-end: span 9;
+	}
+	.col-start-9\@md {
+		grid-column-start: 9;
+	}
+	.col-end-10\@md {
+		grid-column-end: 10;
+	}
+	.col-10\@md {
+		grid-column-end: span 10;
+	}
+	.col-start-10\@md {
+		grid-column-start: 10;
+	}
+	.col-end-11\@md {
+		grid-column-end: 11;
+	}
+	.col-11\@md {
+		grid-column-end: span 11;
+	}
+	.col-start-11\@md {
+		grid-column-start: 11;
+	}
+	.col-end-12\@md {
+		grid-column-end: 12;
+	}
+	.col-12\@md {
+		grid-column-end: span 12;
+	}
+	.col-start-12\@md {
+		grid-column-start: 12;
+	}
+	.col-end-13\@md {
+		grid-column-end: 13;
+	}
+	.col-start-auto\@md {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@md {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 80rem) {
+	.grid-auto-xs\@lg {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@lg {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@lg {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@lg {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@lg {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@lg {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@lg {
+		grid-column-end: span 1;
+	}
+	.col-start-1\@lg {
+		grid-column-start: 1;
+	}
+	.col-end-2\@lg {
+		grid-column-end: 2;
+	}
+	.col-2\@lg {
+		grid-column-end: span 2;
+	}
+	.col-start-2\@lg {
+		grid-column-start: 2;
+	}
+	.col-end-3\@lg {
+		grid-column-end: 3;
+	}
+	.col-3\@lg {
+		grid-column-end: span 3;
+	}
+	.col-start-3\@lg {
+		grid-column-start: 3;
+	}
+	.col-end-4\@lg {
+		grid-column-end: 4;
+	}
+	.col-4\@lg {
+		grid-column-end: span 4;
+	}
+	.col-start-4\@lg {
+		grid-column-start: 4;
+	}
+	.col-end-5\@lg {
+		grid-column-end: 5;
+	}
+	.col-5\@lg {
+		grid-column-end: span 5;
+	}
+	.col-start-5\@lg {
+		grid-column-start: 5;
+	}
+	.col-end-6\@lg {
+		grid-column-end: 6;
+	}
+	.col-6\@lg {
+		grid-column-end: span 6;
+	}
+	.col-start-6\@lg {
+		grid-column-start: 6;
+	}
+	.col-end-7\@lg {
+		grid-column-end: 7;
+	}
+	.col-7\@lg {
+		grid-column-end: span 7;
+	}
+	.col-start-7\@lg {
+		grid-column-start: 7;
+	}
+	.col-end-8\@lg {
+		grid-column-end: 8;
+	}
+	.col-8\@lg {
+		grid-column-end: span 8;
+	}
+	.col-start-8\@lg {
+		grid-column-start: 8;
+	}
+	.col-end-9\@lg {
+		grid-column-end: 9;
+	}
+	.col-9\@lg {
+		grid-column-end: span 9;
+	}
+	.col-start-9\@lg {
+		grid-column-start: 9;
+	}
+	.col-end-10\@lg {
+		grid-column-end: 10;
+	}
+	.col-10\@lg {
+		grid-column-end: span 10;
+	}
+	.col-start-10\@lg {
+		grid-column-start: 10;
+	}
+	.col-end-11\@lg {
+		grid-column-end: 11;
+	}
+	.col-11\@lg {
+		grid-column-end: span 11;
+	}
+	.col-start-11\@lg {
+		grid-column-start: 11;
+	}
+	.col-end-12\@lg {
+		grid-column-end: 12;
+	}
+	.col-12\@lg {
+		grid-column-end: span 12;
+	}
+	.col-start-12\@lg {
+		grid-column-start: 12;
+	}
+	.col-end-13\@lg {
+		grid-column-end: 13;
+	}
+	.col-start-auto\@lg {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@lg {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 90rem) {
+	.grid-auto-xs\@xl {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@xl {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@xl {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@xl {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@xl {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@xl {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@xl {
+		grid-column-end: span 1;
+	}
+	.col-start-1\@xl {
+		grid-column-start: 1;
+	}
+	.col-end-2\@xl {
+		grid-column-end: 2;
+	}
+	.col-2\@xl {
+		grid-column-end: span 2;
+	}
+	.col-start-2\@xl {
+		grid-column-start: 2;
+	}
+	.col-end-3\@xl {
+		grid-column-end: 3;
+	}
+	.col-3\@xl {
+		grid-column-end: span 3;
+	}
+	.col-start-3\@xl {
+		grid-column-start: 3;
+	}
+	.col-end-4\@xl {
+		grid-column-end: 4;
+	}
+	.col-4\@xl {
+		grid-column-end: span 4;
+	}
+	.col-start-4\@xl {
+		grid-column-start: 4;
+	}
+	.col-end-5\@xl {
+		grid-column-end: 5;
+	}
+	.col-5\@xl {
+		grid-column-end: span 5;
+	}
+	.col-start-5\@xl {
+		grid-column-start: 5;
+	}
+	.col-end-6\@xl {
+		grid-column-end: 6;
+	}
+	.col-6\@xl {
+		grid-column-end: span 6;
+	}
+	.col-start-6\@xl {
+		grid-column-start: 6;
+	}
+	.col-end-7\@xl {
+		grid-column-end: 7;
+	}
+	.col-7\@xl {
+		grid-column-end: span 7;
+	}
+	.col-start-7\@xl {
+		grid-column-start: 7;
+	}
+	.col-end-8\@xl {
+		grid-column-end: 8;
+	}
+	.col-8\@xl {
+		grid-column-end: span 8;
+	}
+	.col-start-8\@xl {
+		grid-column-start: 8;
+	}
+	.col-end-9\@xl {
+		grid-column-end: 9;
+	}
+	.col-9\@xl {
+		grid-column-end: span 9;
+	}
+	.col-start-9\@xl {
+		grid-column-start: 9;
+	}
+	.col-end-10\@xl {
+		grid-column-end: 10;
+	}
+	.col-10\@xl {
+		grid-column-end: span 10;
+	}
+	.col-start-10\@xl {
+		grid-column-start: 10;
+	}
+	.col-end-11\@xl {
+		grid-column-end: 11;
+	}
+	.col-11\@xl {
+		grid-column-end: span 11;
+	}
+	.col-start-11\@xl {
+		grid-column-start: 11;
+	}
+	.col-end-12\@xl {
+		grid-column-end: 12;
+	}
+	.col-12\@xl {
+		grid-column-end: span 12;
+	}
+	.col-start-12\@xl {
+		grid-column-start: 12;
+	}
+	.col-end-13\@xl {
+		grid-column-end: 13;
+	}
+	.col-start-auto\@xl {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@xl {
+		grid-column-end: auto;
+	}
+}
+
+/* Accessibility
+--------------------------------------------- */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #000;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+/* Spacing
+--------------------------------------------- */
+.padding--0 {
+	padding: 0px;
+}
+
+.padding__top--0 {
+	padding-top: 0px;
+}
+
+.padding__bottom--0 {
+	padding-bottom: 0px;
+}
+
+.margin--0 {
+	margin: 0px;
+}
+
+.margin__top--0 {
+	margin-top: 0px;
+}
+
+.margin__bottom--0 {
+	margin-bottom: 0px;
+}
+
+.padding--5 {
+	padding: 5px;
+}
+
+.padding__top--5 {
+	padding-top: 5px;
+}
+
+.padding__bottom--5 {
+	padding-bottom: 5px;
+}
+
+.margin--5 {
+	margin: 5px;
+}
+
+.margin__top--5 {
+	margin-top: 5px;
+}
+
+.margin__bottom--5 {
+	margin-bottom: 5px;
+}
+
+.padding--10 {
+	padding: 10px;
+}
+
+.padding__top--10 {
+	padding-top: 10px;
+}
+
+.padding__bottom--10 {
+	padding-bottom: 10px;
+}
+
+.margin--10 {
+	margin: 10px;
+}
+
+.margin__top--10 {
+	margin-top: 10px;
+}
+
+.margin__bottom--10 {
+	margin-bottom: 10px;
+}
+
+.padding--15 {
+	padding: 15px;
+}
+
+.padding__top--15 {
+	padding-top: 15px;
+}
+
+.padding__bottom--15 {
+	padding-bottom: 15px;
+}
+
+.margin--15 {
+	margin: 15px;
+}
+
+.margin__top--15 {
+	margin-top: 15px;
+}
+
+.margin__bottom--15 {
+	margin-bottom: 15px;
+}
+
+.padding--20 {
+	padding: 20px;
+}
+
+.padding__top--20 {
+	padding-top: 20px;
+}
+
+.padding__bottom--20 {
+	padding-bottom: 20px;
+}
+
+.margin--20 {
+	margin: 20px;
+}
+
+.margin__top--20 {
+	margin-top: 20px;
+}
+
+.margin__bottom--20 {
+	margin-bottom: 20px;
+}
+
+.padding--25 {
+	padding: 25px;
+}
+
+.padding__top--25 {
+	padding-top: 25px;
+}
+
+.padding__bottom--25 {
+	padding-bottom: 25px;
+}
+
+.margin--25 {
+	margin: 25px;
+}
+
+.margin__top--25 {
+	margin-top: 25px;
+}
+
+.margin__bottom--25 {
+	margin-bottom: 25px;
+}
+
+.padding--30 {
+	padding: 30px;
+}
+
+.padding__top--30 {
+	padding-top: 30px;
+}
+
+.padding__bottom--30 {
+	padding-bottom: 30px;
+}
+
+.margin--30 {
+	margin: 30px;
+}
+
+.margin__top--30 {
+	margin-top: 30px;
+}
+
+.margin__bottom--30 {
+	margin-bottom: 30px;
+}
+
+.padding--35 {
+	padding: 35px;
+}
+
+.padding__top--35 {
+	padding-top: 35px;
+}
+
+.padding__bottom--35 {
+	padding-bottom: 35px;
+}
+
+.margin--35 {
+	margin: 35px;
+}
+
+.margin__top--35 {
+	margin-top: 35px;
+}
+
+.margin__bottom--35 {
+	margin-bottom: 35px;
+}
+
+.padding--40 {
+	padding: 40px;
+}
+
+.padding__top--40 {
+	padding-top: 40px;
+}
+
+.padding__bottom--40 {
+	padding-bottom: 40px;
+}
+
+.margin--40 {
+	margin: 40px;
+}
+
+.margin__top--40 {
+	margin-top: 40px;
+}
+
+.margin__bottom--40 {
+	margin-bottom: 40px;
+}
+
+.padding--45 {
+	padding: 45px;
+}
+
+.padding__top--45 {
+	padding-top: 45px;
+}
+
+.padding__bottom--45 {
+	padding-bottom: 45px;
+}
+
+.margin--45 {
+	margin: 45px;
+}
+
+.margin__top--45 {
+	margin-top: 45px;
+}
+
+.margin__bottom--45 {
+	margin-bottom: 45px;
+}
+
+.padding--50 {
+	padding: 50px;
+}
+
+.padding__top--50 {
+	padding-top: 50px;
+}
+
+.padding__bottom--50 {
+	padding-bottom: 50px;
+}
+
+.margin--50 {
+	margin: 50px;
+}
+
+.margin__top--50 {
+	margin-top: 50px;
+}
+
+.margin__bottom--50 {
+	margin-bottom: 50px;
+}
+
+.padding--55 {
+	padding: 55px;
+}
+
+.padding__top--55 {
+	padding-top: 55px;
+}
+
+.padding__bottom--55 {
+	padding-bottom: 55px;
+}
+
+.margin--55 {
+	margin: 55px;
+}
+
+.margin__top--55 {
+	margin-top: 55px;
+}
+
+.margin__bottom--55 {
+	margin-bottom: 55px;
+}
+
+.padding--60 {
+	padding: 60px;
+}
+
+.padding__top--60 {
+	padding-top: 60px;
+}
+
+.padding__bottom--60 {
+	padding-bottom: 60px;
+}
+
+.margin--60 {
+	margin: 60px;
+}
+
+.margin__top--60 {
+	margin-top: 60px;
+}
+
+.margin__bottom--60 {
+	margin-bottom: 60px;
+}
+
+.padding--65 {
+	padding: 65px;
+}
+
+.padding__top--65 {
+	padding-top: 65px;
+}
+
+.padding__bottom--65 {
+	padding-bottom: 65px;
+}
+
+.margin--65 {
+	margin: 65px;
+}
+
+.margin__top--65 {
+	margin-top: 65px;
+}
+
+.margin__bottom--65 {
+	margin-bottom: 65px;
+}
+
+.padding--70 {
+	padding: 70px;
+}
+
+.padding__top--70 {
+	padding-top: 70px;
+}
+
+.padding__bottom--70 {
+	padding-bottom: 70px;
+}
+
+.margin--70 {
+	margin: 70px;
+}
+
+.margin__top--70 {
+	margin-top: 70px;
+}
+
+.margin__bottom--70 {
+	margin-bottom: 70px;
+}
+
+.padding--75 {
+	padding: 75px;
+}
+
+.padding__top--75 {
+	padding-top: 75px;
+}
+
+.padding__bottom--75 {
+	padding-bottom: 75px;
+}
+
+.margin--75 {
+	margin: 75px;
+}
+
+.margin__top--75 {
+	margin-top: 75px;
+}
+
+.margin__bottom--75 {
+	margin-bottom: 75px;
+}
+
+.padding--80 {
+	padding: 80px;
+}
+
+.padding__top--80 {
+	padding-top: 80px;
+}
+
+.padding__bottom--80 {
+	padding-bottom: 80px;
+}
+
+.margin--80 {
+	margin: 80px;
+}
+
+.margin__top--80 {
+	margin-top: 80px;
+}
+
+.margin__bottom--80 {
+	margin-bottom: 80px;
+}
+
+.padding--85 {
+	padding: 85px;
+}
+
+.padding__top--85 {
+	padding-top: 85px;
+}
+
+.padding__bottom--85 {
+	padding-bottom: 85px;
+}
+
+.margin--85 {
+	margin: 85px;
+}
+
+.margin__top--85 {
+	margin-top: 85px;
+}
+
+.margin__bottom--85 {
+	margin-bottom: 85px;
+}
+
+.padding--90 {
+	padding: 90px;
+}
+
+.padding__top--90 {
+	padding-top: 90px;
+}
+
+.padding__bottom--90 {
+	padding-bottom: 90px;
+}
+
+.margin--90 {
+	margin: 90px;
+}
+
+.margin__top--90 {
+	margin-top: 90px;
+}
+
+.margin__bottom--90 {
+	margin-bottom: 90px;
+}
+
+.padding--95 {
+	padding: 95px;
+}
+
+.padding__top--95 {
+	padding-top: 95px;
+}
+
+.padding__bottom--95 {
+	padding-bottom: 95px;
+}
+
+.margin--95 {
+	margin: 95px;
+}
+
+.margin__top--95 {
+	margin-top: 95px;
+}
+
+.margin__bottom--95 {
+	margin-bottom: 95px;
+}
+
+.padding--100 {
+	padding: 100px;
+}
+
+.padding__top--100 {
+	padding-top: 100px;
+}
+
+.padding__bottom--100 {
+	padding-bottom: 100px;
+}
+
+.margin--100 {
+	margin: 100px;
+}
+
+.margin__top--100 {
+	margin-top: 100px;
+}
+
+.margin__bottom--100 {
+	margin-bottom: 100px;
+}
+
+.padding--105 {
+	padding: 105px;
+}
+
+.padding__top--105 {
+	padding-top: 105px;
+}
+
+.padding__bottom--105 {
+	padding-bottom: 105px;
+}
+
+.margin--105 {
+	margin: 105px;
+}
+
+.margin__top--105 {
+	margin-top: 105px;
+}
+
+.margin__bottom--105 {
+	margin-bottom: 105px;
+}
+
+.padding--110 {
+	padding: 110px;
+}
+
+.padding__top--110 {
+	padding-top: 110px;
+}
+
+.padding__bottom--110 {
+	padding-bottom: 110px;
+}
+
+.margin--110 {
+	margin: 110px;
+}
+
+.margin__top--110 {
+	margin-top: 110px;
+}
+
+.margin__bottom--110 {
+	margin-bottom: 110px;
+}
+
+.padding--115 {
+	padding: 115px;
+}
+
+.padding__top--115 {
+	padding-top: 115px;
+}
+
+.padding__bottom--115 {
+	padding-bottom: 115px;
+}
+
+.margin--115 {
+	margin: 115px;
+}
+
+.margin__top--115 {
+	margin-top: 115px;
+}
+
+.margin__bottom--115 {
+	margin-bottom: 115px;
+}
+
+.padding--120 {
+	padding: 120px;
+}
+
+.padding__top--120 {
+	padding-top: 120px;
+}
+
+.padding__bottom--120 {
+	padding-bottom: 120px;
+}
+
+.margin--120 {
+	margin: 120px;
+}
+
+.margin__top--120 {
+	margin-top: 120px;
+}
+
+.margin__bottom--120 {
+	margin-bottom: 120px;
+}
+
+.padding--125 {
+	padding: 125px;
+}
+
+.padding__top--125 {
+	padding-top: 125px;
+}
+
+.padding__bottom--125 {
+	padding-bottom: 125px;
+}
+
+.margin--125 {
+	margin: 125px;
+}
+
+.margin__top--125 {
+	margin-top: 125px;
+}
+
+.margin__bottom--125 {
+	margin-bottom: 125px;
+}
+
+.padding--130 {
+	padding: 130px;
+}
+
+.padding__top--130 {
+	padding-top: 130px;
+}
+
+.padding__bottom--130 {
+	padding-bottom: 130px;
+}
+
+.margin--130 {
+	margin: 130px;
+}
+
+.margin__top--130 {
+	margin-top: 130px;
+}
+
+.margin__bottom--130 {
+	margin-bottom: 130px;
+}
+
+.padding--135 {
+	padding: 135px;
+}
+
+.padding__top--135 {
+	padding-top: 135px;
+}
+
+.padding__bottom--135 {
+	padding-bottom: 135px;
+}
+
+.margin--135 {
+	margin: 135px;
+}
+
+.margin__top--135 {
+	margin-top: 135px;
+}
+
+.margin__bottom--135 {
+	margin-bottom: 135px;
+}
+
+.padding--140 {
+	padding: 140px;
+}
+
+.padding__top--140 {
+	padding-top: 140px;
+}
+
+.padding__bottom--140 {
+	padding-bottom: 140px;
+}
+
+.margin--140 {
+	margin: 140px;
+}
+
+.margin__top--140 {
+	margin-top: 140px;
+}
+
+.margin__bottom--140 {
+	margin-bottom: 140px;
+}
+
+.padding--145 {
+	padding: 145px;
+}
+
+.padding__top--145 {
+	padding-top: 145px;
+}
+
+.padding__bottom--145 {
+	padding-bottom: 145px;
+}
+
+.margin--145 {
+	margin: 145px;
+}
+
+.margin__top--145 {
+	margin-top: 145px;
+}
+
+.margin__bottom--145 {
+	margin-bottom: 145px;
+}
+
+.padding--150 {
+	padding: 150px;
+}
+
+.padding__top--150 {
+	padding-top: 150px;
+}
+
+.padding__bottom--150 {
+	padding-bottom: 150px;
+}
+
+.margin--150 {
+	margin: 150px;
+}
+
+.margin__top--150 {
+	margin-top: 150px;
+}
+
+.margin__bottom--150 {
+	margin-bottom: 150px;
+}
+
+.padding--155 {
+	padding: 155px;
+}
+
+.padding__top--155 {
+	padding-top: 155px;
+}
+
+.padding__bottom--155 {
+	padding-bottom: 155px;
+}
+
+.margin--155 {
+	margin: 155px;
+}
+
+.margin__top--155 {
+	margin-top: 155px;
+}
+
+.margin__bottom--155 {
+	margin-bottom: 155px;
+}
+
+.padding--160 {
+	padding: 160px;
+}
+
+.padding__top--160 {
+	padding-top: 160px;
+}
+
+.padding__bottom--160 {
+	padding-bottom: 160px;
+}
+
+.margin--160 {
+	margin: 160px;
+}
+
+.margin__top--160 {
+	margin-top: 160px;
+}
+
+.margin__bottom--160 {
+	margin-bottom: 160px;
+}
+
+.padding--165 {
+	padding: 165px;
+}
+
+.padding__top--165 {
+	padding-top: 165px;
+}
+
+.padding__bottom--165 {
+	padding-bottom: 165px;
+}
+
+.margin--165 {
+	margin: 165px;
+}
+
+.margin__top--165 {
+	margin-top: 165px;
+}
+
+.margin__bottom--165 {
+	margin-bottom: 165px;
+}
+
+.padding--170 {
+	padding: 170px;
+}
+
+.padding__top--170 {
+	padding-top: 170px;
+}
+
+.padding__bottom--170 {
+	padding-bottom: 170px;
+}
+
+.margin--170 {
+	margin: 170px;
+}
+
+.margin__top--170 {
+	margin-top: 170px;
+}
+
+.margin__bottom--170 {
+	margin-bottom: 170px;
+}
+
+.padding--175 {
+	padding: 175px;
+}
+
+.padding__top--175 {
+	padding-top: 175px;
+}
+
+.padding__bottom--175 {
+	padding-bottom: 175px;
+}
+
+.margin--175 {
+	margin: 175px;
+}
+
+.margin__top--175 {
+	margin-top: 175px;
+}
+
+.margin__bottom--175 {
+	margin-bottom: 175px;
+}
+
+.padding--180 {
+	padding: 180px;
+}
+
+.padding__top--180 {
+	padding-top: 180px;
+}
+
+.padding__bottom--180 {
+	padding-bottom: 180px;
+}
+
+.margin--180 {
+	margin: 180px;
+}
+
+.margin__top--180 {
+	margin-top: 180px;
+}
+
+.margin__bottom--180 {
+	margin-bottom: 180px;
+}
+
+.padding--185 {
+	padding: 185px;
+}
+
+.padding__top--185 {
+	padding-top: 185px;
+}
+
+.padding__bottom--185 {
+	padding-bottom: 185px;
+}
+
+.margin--185 {
+	margin: 185px;
+}
+
+.margin__top--185 {
+	margin-top: 185px;
+}
+
+.margin__bottom--185 {
+	margin-bottom: 185px;
+}
+
+.padding--190 {
+	padding: 190px;
+}
+
+.padding__top--190 {
+	padding-top: 190px;
+}
+
+.padding__bottom--190 {
+	padding-bottom: 190px;
+}
+
+.margin--190 {
+	margin: 190px;
+}
+
+.margin__top--190 {
+	margin-top: 190px;
+}
+
+.margin__bottom--190 {
+	margin-bottom: 190px;
+}
+
+.padding--195 {
+	padding: 195px;
+}
+
+.padding__top--195 {
+	padding-top: 195px;
+}
+
+.padding__bottom--195 {
+	padding-bottom: 195px;
+}
+
+.margin--195 {
+	margin: 195px;
+}
+
+.margin__top--195 {
+	margin-top: 195px;
+}
+
+.margin__bottom--195 {
+	margin-bottom: 195px;
+}
+
+.padding--200 {
+	padding: 200px;
+}
+
+.padding__top--200 {
+	padding-top: 200px;
+}
+
+.padding__bottom--200 {
+	padding-bottom: 200px;
+}
+
+.margin--200 {
+	margin: 200px;
+}
+
+.margin__top--200 {
+	margin-top: 200px;
+}
+
+.margin__bottom--200 {
+	margin-bottom: 200px;
+}
+
+/* Section padding
+--------------------------------------------- */
+.section {
+	position: relative;
+	padding-top: 16rem;
+	padding-bottom: 16rem;
+}
+
+.section--small {
+	position: relative;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+}
+
+/*# sourceMappingURL=style.css.map */
