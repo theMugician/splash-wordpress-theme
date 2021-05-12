@@ -11,7 +11,7 @@ $color__text-input-focus: #111;
 $color__link: #ffd100; //yellow
 $color__link-visited: #ffd100; //yellow
 $color__link-hover: #ffd100; //midnightblue
-$color__text-main: #000;
+$color__text-main: #10162f;
 
 $color__border-button: #ffd100 #ffd100 #ffd100;
 $color__border-button-hover: #ffd100 #ffd100 #ffd100;
@@ -19,5 +19,38 @@ $color__border-button-focus: #ffd100 #ffd100 #ffd100;
 $color__border-input: #ccc;
 $color__border-abbr: #000;
 
-$color__primary: #ffd100; //yellow
-$color__black: #000;
+$color__primary: #10162f; //navy
+$color__navy: #10162f; //navy
+$color__yellow: #ffd100; //yellow
+$color__black: #10162f;
+$color__grey: #ededed;
+
+//--color-navy: #10162f;
+//link --color-navy: #10162f;
+
+$colors: (
+  'primary' : #10162f,
+  'primary--light' : #626ed4,
+  'black' : #10162f,
+  'text' : #10162f,  
+  'white': #fff,
+  'success': #2AA39A,
+  'danger': #EC4561,
+  'warning': #F8B425,
+  'info': #38A5F8,
+  'muted': #EDECF1
+);
+
+
+@each $name,$color in $colors {
+   .color__#{$name}{
+       color: $color;
+   }
+}
+
+@each $name,$color in $colors {
+   .background-color__#{$name}{
+       background-color: $color;
+   }
+}
+

@@ -116,25 +116,26 @@ function splash_content_width() {
 }
 add_action( 'after_setup_theme', 'splash_content_width', 0 );
 
+
 /**
- * Register widget area.
+ * Register footer widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function splash_widgets_init() {
+function splash_footer_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'splash' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'splash' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'name'          => esc_html__( 'Footer', 'splash' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'splash' ),
+			'before_widget' => '<section id="%1$s" class="widget col-3 %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget__title">',
+			'after_title'   => '</h3>',
 		)
 	);
 }
-add_action( 'widgets_init', 'splash_widgets_init' );
+add_action( 'widgets_init', 'splash_footer_widgets_init', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -196,3 +197,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load class for creating option pages.
+ */
+if ( !class_exists( 'RationalOptionPages' ) ) {
+	require_once(get_template_directory() . '/inc/RationalOptionPages.php');
+}

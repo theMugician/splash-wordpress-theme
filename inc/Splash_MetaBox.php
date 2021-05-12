@@ -319,3 +319,8 @@ class Splash_MetaBoxTemplate
     return $html;
 	}
 }
+
+class Splash_MetaBox_Group
+{
+
+}

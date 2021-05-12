@@ -3,3 +3,12 @@ $size__site-sidebar: 25%;
 
 $spacing: 8rem;
 $spacing--large: 16rem;
+
+$gutter: 2rem;
+
+/// Container's maximum width
+/// @type Length
+$max-width__no-max: 100%;
+$max-width: 122.8rem !default;
+$max-width__medium: 81.2rem !default;
+$max-width__small: 64rem !default;
