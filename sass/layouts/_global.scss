@@ -8,3 +8,14 @@
 		margin: auto;
 	}
 }
+
+
+.blog {
+	main {
+		max-width: $max-width__medium;
+		margin: auto;
+	}
+	article {
+		margin-bottom: 10rem;
+	}
+}

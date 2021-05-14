@@ -945,6 +945,15 @@ textarea {
 	margin: auto;
 }
 
+.blog main {
+	max-width: 81.2rem;
+	margin: auto;
+}
+
+.blog article {
+	margin-bottom: 10rem;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/

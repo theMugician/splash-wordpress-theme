@@ -79,7 +79,7 @@ Splash Starter Theme
 
 This list shows what type of pages use what template files
 
-Blog Archive 
+Blog Archive
 => `index.php`
 								\_\_`template-parts/content.php`
 
@@ -87,7 +87,7 @@ Blog Single
 => `single.php`
 								\_\_`template-parts/content.php`
 
-Page				 
+Page  			 
 => `page.php`
 								\_\_`template-parts/content-page.php`
 

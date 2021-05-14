@@ -55,13 +55,15 @@
 					'after'  => '</div>',
 				)
 			);
-		else :
-			the_excerpt();
-		endif;	
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php splash_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+		<?php
+		else :             
+			the_excerpt();
+		endif;
+		?>
 </article><!-- #post-<?php the_ID(); ?> -->
