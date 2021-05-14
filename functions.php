@@ -143,7 +143,7 @@ add_action( 'widgets_init', 'splash_footer_widgets_init', 0 );
 function splash_scripts() {
 	wp_enqueue_style( 'splash-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'splash-style', 'rtl', 'replace' );
-	wp_enqueue_style( 'bootstrap-carousel-css', get_template_directory_uri() . '/assets/bootstrap-carousel.css' );
+	wp_enqueue_style( 'bootstrap-carousel-css', get_template_directory_uri() . '/assets/css/bootstrap-carousel.css' );
 
 	//Add prism pre syntax
 	//if ( is_single() && has_tag( 'code' ) ) { 
@@ -151,9 +151,9 @@ function splash_scripts() {
 	  wp_enqueue_script('prism-js', get_template_directory_uri() . '/assets/js/prism.js');
 	//}
 
-	wp_enqueue_script( 'splash-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-  wp_enqueue_script( 'bootstrap-carousel-js', get_template_directory_uri() . '/assets/bootstrap-carousel.min.js' , array('jquery'));
-  wp_enqueue_script('init-bootstrap-carousel', get_template_directory_uri() . '/js/init-carousel.js', array('bootstrap-carousel-js'));
+	wp_enqueue_script( 'splash-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
+  wp_enqueue_script( 'bootstrap-carousel-js', get_template_directory_uri() . '/assets/js/bootstrap-carousel.min.js' , array('jquery'));
+  wp_enqueue_script('init-bootstrap-carousel', get_template_directory_uri() . '/assets/js/init-carousel.js', array('bootstrap-carousel-js'));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -189,11 +189,6 @@ require get_template_directory() . '/inc/gutenberg.php';
 /**
  * Splash metabox Class for creating custom metaboxes.
  */
-require get_template_directory() . '/inc/Splash_MetaBox.php';
-
-/**
- * Splash metabox Class for creating custom metaboxes.
- */
 require get_template_directory() . '/inc/pricing-plans.php';
 
 /**
@@ -209,106 +204,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( !class_exists( 'RationalOptionPages' ) ) {
 	require_once(get_template_directory() . '/inc/RationalOptionPages.php');
 }
-
-
-// add_action( 'admin_menu', 'greg_options_page' );
- 
-// function greg_options_page() {
- 
-// 	add_options_page(
-// 		'My Page Title', // page <title>Title</title>
-// 		'My Page', // menu link text
-// 		'manage_options', // capability to access the page
-// 		'greg-slug', // page URL slug
-// 		'greg_page_content', // callback function with content
-// 		2 // priority
-// 	);
- 
-// }
- 
-// function greg_page_content(){
- 
-// 	echo '<div class="wrap">
-// 		<h1>My Page Settings</h1>
-// 		<form method="post" action="options.php">';
-
-// 	settings_fields( 'greg_settings' ); // settings group name
-// 	do_settings_sections( 'greg-slug' ); // just a page slug
-// 	submit_button();
- 
-// 	echo '</form></div>';
- 
-// }
-
-// add_action( 'admin_init',  'greg_register_setting' );
- 
-// function greg_register_setting(){
- 
-// 	register_setting(
-// 		'greg_settings', // settings group name
-// 		'option_to_update', // option name
-// 		'sanitize_text_field' // sanitization function
-// 	);
- 
-// 	add_settings_section(
-// 		'some_settings_section_id', // section ID
-// 		'My Section Title', // title (optional) (if needed)
-// 		'', // callback function (if needed)
-// 		'greg-slug' // page slug
-// 	);
- 
-// 	add_settings_field(
-// 		'option_to_update',
-// 		'Option to update',
-// 		'greg_text_field_html', // function which prints the field
-// 		'greg-slug', // page slug
-// 		'some_settings_section_id', // section ID
-// 		array( 
-// 			'label_for' => 'option_to_update',
-// 			'class' => 'greg-class', // for <tr> element
-// 		)
-// 	);
- 
-// }
- 
-// function greg_text_field_html(){
- 
-// 	$text = get_option( 'option_to_update' );
- 
-// 	printf(
-// 		'<input type="text" id="option_to_update" name="option_to_update" value="%s" />',
-// 		esc_attr( $text )
-// 	);
- 
-// }
-
-
-$pages = array(
-	'greg-slug'	=> array(
-		'parent_slug'	=> 'options-general.php',
-		'page_title'	=> __( 'My Page Title', 'sample-domain' ),
-		'sections'		=> array(
-			'some_settings_section_id'	=> array(
-				'title'			=> __( 'My Section Title', 'sample-domain' ),
-				'fields'		=> array(
-					'default'		=> array(
-						'title'			=> __( 'Option to update', 'sample-domain' ),
-						'id' 				=> 		'option_to_update'
-					),
-				),
-			),
-		),
-	),
-);
-
-$option_page = new RationalOptionPages( $pages );
-
-
-function meks_which_template_is_loaded() {
-	if ( is_super_admin() ) {
-		global $template;
-		print_r( $template );
-	}
-}
-
-add_action( 'wp_footer', 'meks_which_template_is_loaded' );
