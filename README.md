@@ -9,7 +9,7 @@ I was designed by
 - Greg Slonina
 - hello@sevenoceans.agency
 
-I'll keep the default `underscores` theme guidelines here 👇
+Since this theme is using a lot of default `underscores` theme functionality I'll keep the default `underscores` theme guidelines here 👇
 
 My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
@@ -70,6 +70,24 @@ $ npm install
 - `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
 - `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
 - `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+
+
+Splash Starter Theme
+---------------
+
+### Template files
+
+This list shows what type of pages use what template files
+
+Blog Archive => `index.php`
+								\_\_`template-parts/content.php`
+
+Blog Single  => `single.php`
+								\_\_`template-parts/content.php`
+
+Page 				 => `page.php`
+								\_\_`template-parts/content-page.php`
+
 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
