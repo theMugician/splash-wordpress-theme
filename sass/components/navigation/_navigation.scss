@@ -7,6 +7,7 @@
     ul {
     	padding: 0;
     	margin: 0;
+    	display: flex;
     }
 		// @include screen__lt-md {
 		// 	display: none;
@@ -16,11 +17,12 @@
 				width: 100% !important;
 			}
 		}
-		.page_item {
+		.menu-item {
 			position: relative;
 			border-bottom: 0;
 			margin-left: 2rem;
 			list-style-type: none;
+			z-index: 1;
 			//transition: all 0.25s;
 			//border-bottom: 2px solid white;
 			&:after {
@@ -37,6 +39,8 @@
 				width: 100%;
 			}
 			a {
+				position: relative;
+				z-index: 2;
 				font-weight: 700;
 				text-transform: uppercase;
 				align-self: center;

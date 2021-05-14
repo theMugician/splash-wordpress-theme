@@ -209,11 +209,9 @@ class Splash_SaveMetaBox
 
     global $post_id;
     foreach ( $this->fields as $field_key ) {
-      //var_dump($field_key);
-      //die();
+
       if ( array_key_exists( $field_key, $_POST ) ) {
-        // echo('Found array_key');
-        // die();
+
         update_post_meta( $post_id, $field_key, sanitize_text_field( $_POST[$field_key] ) );
       }
    	}

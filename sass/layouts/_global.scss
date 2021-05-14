@@ -1,3 +1,10 @@
 .no-page-title .entry-content {
 	margin-top: 0;
 }
+
+.single-post {
+	main {
+		max-width: $max-width__medium;
+		margin: auto;
+	}
+}
