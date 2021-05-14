@@ -79,13 +79,16 @@ Splash Starter Theme
 
 This list shows what type of pages use what template files
 
-Blog Archive => `index.php`
+Blog Archive\ 
+=> `index.php`
 								\_\_`template-parts/content.php`
 
-Blog Single  => `single.php`
+Blog Single\  
+=> `single.php`
 								\_\_`template-parts/content.php`
 
-Page 				 => `page.php`
+Page\ 				 
+=> `page.php`
 								\_\_`template-parts/content-page.php`
 
 
