@@ -1247,6 +1247,10 @@ ul li ul li {
 	margin: 1.5em 0 0;
 }
 
+.entry-footer {
+	margin-top: 6rem;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -1260,6 +1264,10 @@ ul li ul li {
 
 .bypostauthor {
 	display: block;
+}
+
+#comments {
+	margin-top: 6rem;
 }
 
 /* Widgets
@@ -1517,7 +1525,13 @@ ul li ul li {
 }
 
 .wp-block-media-text .wp-block-media-text__content {
-	padding: 0;
+	padding-right: 2rem;
+	padding-left: 0;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: 2rem;
+	padding-right: 0;
 }
 
 /* Jetpack infinite scroll

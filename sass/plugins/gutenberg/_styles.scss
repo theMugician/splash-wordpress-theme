@@ -46,5 +46,11 @@
 }
 
 .wp-block-media-text .wp-block-media-text__content {
-	padding: 0;
+	padding-right: 2rem;
+	padding-left: 0;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: 2rem;
+	padding-right: 0;
 }
