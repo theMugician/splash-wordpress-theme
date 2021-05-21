@@ -1479,15 +1479,15 @@ ul li ul li {
 /* Gutenberg
 --------------------------------------------- */
 .has-black-background-color {
-	background-color: #000;
+	background-color: #10162f;
 }
 
 .has-black-color {
-	color: #000;
+	color: #10162f;
 }
 
 .has-black-background-color.wp-block-button__link {
-	border: 2px solid #000;
+	border: 2px solid #10162f;
 }
 
 .has-yellow-background-color {

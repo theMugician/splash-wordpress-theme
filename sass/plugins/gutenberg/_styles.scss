@@ -1,13 +1,13 @@
 .has-black-background-color {
-  background-color: #000;
+  background-color: $color__black;
 }
 
 .has-black-color {
-  color: #000;
+  color: $color__black;
 }
 
 .has-black-background-color.wp-block-button__link {
-	border: 2px solid #000;
+	border: 2px solid $color__black;
 }
 
 .has-yellow-background-color {
