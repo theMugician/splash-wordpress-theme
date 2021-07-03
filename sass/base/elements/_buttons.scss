@@ -1,3 +1,4 @@
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -5,20 +6,11 @@ input[type="submit"] {
 	border: 2px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
-	color: #000;
+	color: #fff;
 	line-height: 1;
 	font-size: 1.6rem;
 	padding: 1rem 1.6rem;
   min-width: 24.0rem;
-  &--small {
-    font-size: 1.2rem;
-    padding: 1rem 1.6rem;
-    min-width: 102rem;
-  }
-  &--large {
-    padding: 1.6rem 2.4rem;
-    min-width: 29.2rem;
-  }
 	&:hover {
 		border-color: $color__border-button-hover;
 	}
@@ -27,6 +19,29 @@ input[type="submit"] {
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+}
+
+.button {
+	  &--small {
+    font-size: 1.2rem;
+    padding: 1rem 1.6rem;
+    min-width: 102rem;
+  }
+  &--large {
+    padding: 1.6rem 2.4rem;
+    min-width: 29.2rem;
+  }
+}
+
+.wp-block-button__link {
+	border: 2px solid;
+	border-color: $color__border-button;
+	background: $color__background-button;
+	color: #fff;
+	line-height: 1;
+	font-size: 1.6rem;
+	padding: 1rem 1.6rem;
+  min-width: 24.0rem;
 }
 
 // .vigor-buttons {
